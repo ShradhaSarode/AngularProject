@@ -1,0 +1,148 @@
+<!--
+<h1>{{message}}</h1>
+<p>
+  City <input type="text" [value]="city" [disabled]="isDisable"/><br/>
+  City <input type="text" value="{{city}}"/><br>
+  <input type="button" value="Pay" (click)="displayMsg()"/><br>
+</p>
+
+<app-employeelist [msg]="info" (passValue)="readMessage($event)"></app-employeelist>
+<h2>
+  {{childMsg}}
+</h2>
+<app-student-list [msg1]="studinfo" (passStud)="readMsg($event)"></app-student-list>
+<h2>
+  {{childMsg1}}
+</h2>
+<app-employee></app-employee>
+
+<app-registration></app-registration>
+
+<app-login></app-login>
+
+<div *ngIf="isDisplay;else elseBlock">
+  This is true block
+</div>
+<ng-template #elseBlock>This is false block</ng-template>
+@if(isDisplay)
+{
+<div>This is true block used with angular version 17</div>
+}
+@else{
+<div>This is false block used with angular version 17</div>
+}
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">You have selected red color.(In earlier version)</div>
+  <div *ngSwitchCase="'green'">You have selected green color.</div>
+  <div *ngSwitchCase="'blue'">You have selected blue color.</div>
+  <div *ngSwitchDefault>You have not selected RGB color.</div>
+</div>
+@switch(color)
+{
+@case('red')
+{
+<div>
+  <h2>You have selected red color.(In latest version)</h2>
+</div>
+}
+@case('green')
+{
+<div>You have selected green color.</div>
+}
+@case('blue')
+{
+<div>You have selected blue color.</div>
+}
+@default
+{
+<div>You have not selected RGB color.</div>
+}
+}
+
+<div [ngStyle]="{'background-color':'red','color':'white'}">
+  This is sample text in div
+</div>
+
+<div [ngStyle]="applyColor()">
+  This div applied color from class method
+</div>
+
+<div [ngClass]="'first second'">
+  This is example of ngClass
+</div>
+
+<button class="btn btn-success" (click)="Success()">Toggle Success</button>
+<button class="btn btn-danger" (click)="Error()">Toggle Error</button>
+<button class="btn btn-warning" (click)="Warning()">Toggle Warning</button>
+<h3 class="display" [ngClass]="{
+  'Success': isSuccess,
+  'Error' : isError,
+  'Warning': isWarning
+}">
+{{message1}}
+</h3>
+
+<h1 appHighlight>This is example of custom directive</h1>
+
+<p>
+  <b>Original text: {{ text}}</b>
+</p>
+  
+  
+  <p><b>lowercase: </b>
+    {{text|lowercase}}
+  </p>
+  <p><b>uppercase: </b>
+    {{text|uppercase}}
+  </p>
+  <p><b>currentDate: </b>
+    {{currentDate}}
+  </p>
+  <p><b>currentDate shortDate: </b>
+    {{currentDate|date:'shortDate'}}
+  </p>
+  <p><b>currentDate mediumDate: </b>
+    {{currentDate|date:'mediumDate'}}
+  </p>
+  <p><b>currentDate longDate: </b>
+    {{currentDate|date:'longDate'}}
+  </p>
+  
+  
+  <p><b>currentDate format dd-MM-yyy: </b>
+    {{currentDate|date:'dd-MM-yyy'}}
+  </p>
+  <p><b>currentDate format dd/MM/yyy: </b>
+    {{currentDate|date:'dd/MM/yyy'}}
+  </p>
+  <p><b>currentDate format dd/M/yyy: </b>
+    {{currentDate|date:'dd/M/yyy'}}
+  </p>
+  <p><b>currentDate format dd/MMM/yyy: </b>
+    {{currentDate|date:'dd/MMM/yyy'}}
+  </p>
+  <p><b>currentDate format dd/MMMM/yyy: </b>
+    {{currentDate|date:'dd/MMMM/yyy'}}
+  </p>
+  
+  <p><b>currency: </b>
+    {{150|currency}}
+  </p>
+  <p><b>currency 'INR': </b>
+    {{150|currency:'INR'}}
+  </p>
+  <p><b>currency 'EUR': </b>
+    {{150|currency:'EUR'}}
+  </p>
+
+-->
+<h3>Square of given number: </h3><br>
+<b>Square of 25: </b>
+{{25|myMath}}<br>
+<b>Square of 7: </b>
+{{7|myMath}}<br>
+<b>Square of 9: </b>
+{{9|myMath}}
+ 
+  

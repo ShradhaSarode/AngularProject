@@ -1,0 +1,27 @@
+<p>employee works!</p>
+<div class="container">
+    <div class="form-floating mb-3">
+        <input type="number" [(ngModel)]="eid" class="form-control" id="eid" placeholder="emp id">
+        <label for="empid">Employee Id</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" [(ngModel)]="ename" class="form-control" id="ename" placeholder="Emp name">
+        <label for="name">Employee Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" [(ngModel)]="ecity"  class="form-control" id="ecity" placeholder="city">
+        <label for="city">City</label>
+      </div>
+      <div class="form-floating mb-3">
+        <button type="button" class="btn btn-outline-success" (click)="addEmployee()">Add Employee</button>
+      </div>
+      <p>
+        Your Emp Id  {{eid}}
+      </p>
+      <p>
+        Hello , {{ename}}
+      </p>
+      <p>
+        Location  {{ecity}}
+      </p>
+</div>

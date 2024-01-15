@@ -1,0 +1,29 @@
+<h2>{{msg1}}</h2>
+<p>student-list works!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--
+        <tr *ngFor="let s of studentList">
+            <td>{{s.sid}}</td>
+            <td>{{s.sname}}</td>
+            <td>{{s.scity}}</td>
+        </tr>
+        -->
+        @for(s of studentList;track s.sid)
+        {
+            <tr>
+                <td>{{s.sid}}</td>
+                <td>{{s.sname}}</td>
+                <td>{{s.scity}}</td>
+            </tr>
+        }
+    </tbody>
+    <input type="button" value="sendMssage" (click)="sendMsg()"/>
+</table>

@@ -1,0 +1,122 @@
+<!--
+<div class="container">
+  <form [formGroup]="myForm">
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="user name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="user email">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="city" formControlName="city" placeholder="user city">
+        </div>
+      </div>
+    </div>
+    <input type="button" value="submit" class="btn btn-primary" (click)="addData()">
+  </form>
+</div>
+-->
+<h1>------------------------------------------------------------------------------------</h1>
+<!-- <div class="container"> 
+  <form [formGroup]="myForm"> 
+    <div class="row"> 
+      <div class="col-4"> 
+        <div class="mb-3"> 
+          <label for="exampleFormControlInput1" class="form-label" >Name</label> 
+          <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="name" placeholder="user name"> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="row"> 
+    <div class="col-4"> 
+      <div class="mb-3"> 
+        <label for="exampleFormControlInput1" class="form-label" >Email</label> 
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="user email"> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="row"> 
+    <div class="col-4"> 
+      <div class="mb-3"> 
+        <label for="exampleFormControlInput1" class="form-label" >City</label> 
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="city" placeholder="user city"> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="row"> 
+    <div class="col-4"> 
+      <div class="mb-3"> 
+       <input type="button" class="btn btn-primary" (click)="addData()" value="Submit"> 
+      </div> 
+    </div> 
+  </div> 
+     
+ 
+  </form> 
+</div> --> 
+ 
+<div class="container"> 
+  <form [formGroup]="userForm"> 
+    <div class="row"> 
+      <div class="col-4"> 
+        <div class="mb-3"> 
+          <label for="username" class="form-label" >User Name</label> 
+          <input type="text" required [class.is-invalid]="name?.invalid && name?.touched" class="form-control" id="exampleFormControlInput1" formControlName="name" placeholder="user name"> 
+          <div *ngIf="name?.invalid && name?.touched"> 
+            <small class="text-danger" *ngIf="name?.errors?.['required']">Name is required</small> 
+            <small class="text-danger" *ngIf="name?.errors?.['minlength']">Name must have 3 letters</small> 
+          </div> 
+        </div> 
+ 
+      </div> 
+    </div> 
+    <div class="row"> 
+      <div class="col-4"> 
+        <div class="mb-3"> 
+          <label for="username" class="form-label" >User Email</label> 
+          <input type="email" required [class.is-invalid]="email?.invalid && email?.touched" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="user email"> 
+          <div *ngIf="email?.invalid && email?.touched"> 
+            <small class="text-danger" *ngIf="email?.errors?.['required']">Email is required</small> 
+            <small class="text-danger" *ngIf="email?.errors?.['email']">Email must be in proper format</small> 
+          </div> 
+        </div> 
+ 
+      </div> 
+    </div> 
+    <div class="form-check"> 
+      <input class="form-check-input" formControlName="notification" type="checkbox" value="" id="flexCheckDefault"> 
+      <label class="form-check-label" for="flexCheckDefault"> 
+        Send notification 
+      </label> 
+    </div> 
+    <div class="row"> 
+      <div class="col-4"> 
+        <div class="mb-3"> 
+          <label for="phoneNo" class="form-label" >User phone number</label> 
+          <input type="tel" required [class.is-invalid]="phoneNo?.invalid && phoneNo?.touched" class="form-control" id="exampleFormControlInput1" formControlName="phoneNo" placeholder="user phoneNo"> 
+          <div *ngIf="phoneNo?.invalid && phoneNo?.touched"> 
+            <small class="text-danger" *ngIf="phoneNo?.errors?.['required']">phoneNo is required</small> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="row"> 
+      <div class="col-4"> 
+        <input type="submit" [disabled]="userForm.invalid" class="btn btn-primary" value="Add"> 
+      </div> 
+    </div> 
+  </form> 
+</div>

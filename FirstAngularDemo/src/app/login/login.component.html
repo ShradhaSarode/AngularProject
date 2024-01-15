@@ -1,0 +1,23 @@
+<p>login works!</p>
+<p>registration works!</p>
+<div class="container">
+    <div class="form-floating mb-3">
+        <input type="email" [(ngModel)]="emailId" class="form-control" id="emailId" placeholder="email id">
+        <label for="emailId">Email Id</label>
+      </div>
+     
+      <div class="form-floating mb-3">
+        <input type="password" [(ngModel)]="password"  class="form-control" id="password" placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <button type="button" class="btn btn-outline-success" (click)="addLogin()">Login</button>
+      </div>
+      <p>
+        Your Email Id  {{emailId}}
+      </p>
+      <p>
+        Password  {{password}}
+      </p>
+</div>

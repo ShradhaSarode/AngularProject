@@ -1,0 +1,35 @@
+h1{
+    color: rgb(158, 85, 226);
+}
+.first{
+    background-color: rgb(151, 223, 223);
+}
+
+
+.second{
+    font-size: 20px;
+}
+
+.Success
+{
+    color: black;
+    font-size: medium;
+    width: 350px;
+    padding: 20px;
+    background: lightgreen;
+}
+.Error {
+    color: black;
+    font-size: medium;
+    width: 350px;
+    padding: 20px;
+    background: red;
+}
+ 
+.Warning {
+    color: black;
+    font-size: medium;
+    width: 350px;
+    padding: 20px;
+    background: yellow;
+}
