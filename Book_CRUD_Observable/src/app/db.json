@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": "101",
+      "name": "Angular",
+      "price": "2000",
+      "authorid": 1,
+      "authorname": "Eric Freeman"
+    }
+  ],
+  "authors": [
+    {
+      "authorid": 1,
+      "authorname": "Kathy Sierra & Bert Bates",
+      "id": "243d"
+    },
+    {
+      "authorid": 2,
+      "authorname": "Joshua Bloch",
+      "id": "9159"
+    },
+    {
+      "authorid": 3,
+      "authorname": "Eric Freeman",
+      "id": "3558"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+   .img-fluid{
+    bottom: 10px;
+  }
+  .img-fluid {
+    position: absolute;
+   top:10px;
+   left:45%;
+    /* transform: translate(-50%, -50%); */
+  }
+  
+  .protag
+  {
+    position:absolute;
+    top:35%;
+    left:10%;
+    transform: translate(-50%,-50%);
+    color:white;
+  }
+  .logo-container {
+    position: relative;
+    height: 100px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px
+  }
+  
+  label i {
+    color: #999;
+    font-size: 80%;
+  }
+  
+  input,
+  select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  .row {
+    padding-bottom: 40px;
+    /* margin-left: 10%; */
+  }
+  
+  .form-inline {
+    border: 1px solid #ccc;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+  }
+  
+  .cp{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: #f9f9f9;
+    transform: translate(-50%,-50%);
+ }
+  
+  .error {
+    color: red;
+    font-size: 90%;
+  }
+  
+  input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: #006dcc;
+    border-color: #016BC1;
+    box-shadow: 0 3px 0 #0165b6;
+    color: #c4f4f5;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background: #0165b6;
+  }
+  
+  .main-container {
+    /* position: relative; */
+    display: flex;
+    gap: 8px;
+    margin-right:90%;
+    /* width: 10%; */
+  }
+  
+  .sub-container {
+    display: flex;
+    justify-content: center;
+    background: #e5e8e8e8;
+    flex-direction: column;
+    margin-right:90%;
+    
+  }
+  
+  .theme-container {
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    margin: -20px auto 0px auto;
+    /* top: 90%;
+   width: 96%; */
+  }
+  
+  .reg-container {
+    text-align:end;
+    /* margin-left: 120px; */
+  }
+  
+  form {
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* width: 90%; */
+    background: #fff;
+    padding: 15px 40px 40px 40px;
+    border: 1px solid #ccc;
+     margin-left: 15px; 
+     margin-right: 15px;
+    border-radius: 8px;
+    height: 80%;
+  }
+  
+  .iconlogo {
+    margin-top: 170%;
+    padding: 6px;
+    margin-left: 5px;
+    margin-right: 1%;
+  }
+  
+  .bg-img {
+    width: 100%;
+  }
+  
+  .bottom-text {
+    text-align: end;
+  }
+  
+  .button-ch {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-floating input[type="submit"] {
+    background-color: #4c7abe;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 75px;
+    /* Adjust the radius as needed */
+    padding: 10px 15px;
+    width: 150px;
+    flex: right;
+  
+    margin-left: 67%;
+  }
+  
+  .date-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Apply styles to the pagination */ 
+  .pagination { 
+    justify-content: center; 
+  } 
+   
+  .pagination li { 
+    display: inline-block; 
+    margin: 0 5px; 
+  } 
+   
+  .pagination a { 
+    padding: 8px 12px; 
+    text-decoration: none; 
+    color: #007BFF; 
+    border: 1px solid #007BFF; 
+    border-radius: 4px; 
+  } 
+   
+  .pagination a:hover { 
+    background-color: #007BFF; 
+    color: #fff; 
+  }
+  .img1{
+    position: relative;
+    bottom: 0px;
+  }
+
+  /* -------------------- */
+  .d-flex{
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid;
+    
+  }
+  /* --------------------------- */
+  /* Add this CSS to style the select dropdown */
+.form {
+    /* display: block; */
+    width: 100px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    /* margin-left: 90%; */
+    border:none;
+  } 
+  th{
+    background-color: #e9f6fa;
+  }
+  
+  .sort-container{
+    position: relative;
+    margin-left: 1100px;
+    bottom: 30px;
+    text-align: center;
+  }
+  
+.log{
+  margin-top: 300px;
+}

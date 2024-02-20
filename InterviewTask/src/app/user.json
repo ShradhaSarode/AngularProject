@@ -1,0 +1,109 @@
+{
+  "login": [
+    {
+      "email": "sarode06@gmail.com",
+      "password": "1234",
+      "id": "c18d"
+    }
+  ],
+  "project": [
+    {
+      "id": "1",
+      "projectname": "Module1",
+      "reason": "For Business",
+      "type": "Internal",
+      "division": "Filters",
+      "category": "Quality A",
+      "priority": "High",
+      "department": "Strategy",
+      "startdate": "2024-01-22",
+      "enddate": "2024-01-26",
+      "location": "Nanded",
+      "status": "Running"
+    },
+    {
+      "id": "1cbf",
+      "projectname": "local link",
+      "reason": "Business",
+      "type": "Internal",
+      "division": "Compressor",
+      "category": "Quality A",
+      "priority": "High",
+      "department": "Maintenance",
+      "startdate": "2024-01-01",
+      "enddate": "2024-01-30",
+      "location": "Mumbai",
+      "status": "Running"
+    },
+    {
+      "id": "2706",
+      "projectname": "unity hub",
+      "reason": "Dealership",
+      "type": "Extarnal",
+      "division": "Filters",
+      "category": "Quality B",
+      "priority": "Low",
+      "department": "Quality",
+      "startdate": "2024-01-05",
+      "enddate": "2024-01-22",
+      "location": "Delhi",
+      "status": "Closed"
+    },
+    {
+      "id": "069f",
+      "projectname": "civic connect",
+      "reason": "Transport",
+      "type": "Vendor",
+      "division": "Pumps",
+      "category": "Quality C",
+      "priority": "Low",
+      "department": "Maintenance",
+      "startdate": "2024-01-07",
+      "enddate": "2024-01-20",
+      "location": "Pune",
+      "status": "Cancelled"
+    },
+    {
+      "id": "8fa6",
+      "projectname": "social circle",
+      "reason": "Dealership",
+      "type": "Extarnal",
+      "division": "Glass",
+      "category": "Quality D",
+      "priority": "Medium",
+      "department": "Stores",
+      "startdate": "2024-01-10",
+      "enddate": "2024-01-25",
+      "location": "Mumbai",
+      "status": "Closed"
+    },
+    {
+      "id": "37d2",
+      "projectname": "community connector",
+      "reason": "Transport",
+      "type": "Extarnal",
+      "division": "Filters",
+      "category": "Quality B",
+      "priority": "Medium",
+      "department": "Quality",
+      "startdate": "2024-01-10",
+      "enddate": "2024-01-30",
+      "location": "Delhi",
+      "status": "Cancelled"
+    },
+    {
+      "id": "5bc2",
+      "projectname": "tasty tech",
+      "reason": "Dealership",
+      "type": "Vendor",
+      "division": "Water Heater",
+      "category": "Quality C",
+      "priority": "Low",
+      "department": "Stores",
+      "startdate": "2024-01-20",
+      "enddate": "2024-01-29",
+      "location": "Pune",
+      "status": "Running"
+    }
+  ]
+}

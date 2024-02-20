@@ -1,0 +1,220 @@
+<!-- <div>
+    <img src="../assets/Header-bg.svg"  class="img-fluid" alt="...">
+    <div class="logo-container"  >
+      <img src="../assets/Logo.svg"  alt="Your Logo">
+    </div>
+  </div> -->
+
+<!-- <div class="logo-container"  >
+    <img src="../assets/Header-bg.svg"  alt="...">
+    
+      <img src="../assets/Logo.svg"  class="img-fluid" alt="Your Logo">
+    </div> -->
+
+
+<!-- <div class="container"> 
+      <div class="row"> 
+          <div class="col-1"> 
+              <div class="imgcontainer"> 
+                  <img src="../../assets/Dashboard.svg" alt="Avatar" class="avatar"> 
+              </div>&nbsp; 
+              <div class="imgcontainer"> 
+                  <img src="../../assets/Project-list.svg" alt="Avatar" class="avatar"> 
+              </div>&nbsp; 
+              <div class="imgcontainer"> 
+                  <img src="../../assets/create-project-active.svg" alt="Avatar" class="avatar"> 
+              </div> 
+          </div> 
+      </div>
+</div> -->
+<!-- 
+<form class="row g-3">
+    <div class="row g-3">
+        <div class="col-md-8">
+            <div class="form-floating">
+        <label for="exampleFormControlTextarea1" class="form-label">Enter Project Theme</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <div class="form-floating">
+        <button type="submit" class="btn btn-primary" (click)="goBack()" style="border-radius: 65px; width: 140px; height: 44px;">Save Project</button>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <label for="Reason" class="form-label">Reason</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>For Business</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="Type" class="form-label">Type</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Internal</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="Division" class="form-label">Division</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Filters</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+        <label for="Catogary" class="form-label">Catogary</label>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Quality A</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      </div>
+      <div class="col-md-4">
+        <label for="Priority" class="form-label">Priority</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>High</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="Department" class="form-label">Department</label>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Strategy</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      </div> -->
+<div class="container main-class">
+  <div class="row icons">
+    <div class="row g-1">
+      <div class="col-1">
+        <div class="imgcontainer">
+          <img src="../../assets/Dashboard.svg" (click)="dashboard()" alt="Avatar" class="avatar">
+        </div>&nbsp;
+        <div class="imgcontainer">
+          <img src="../../assets/Project-list.svg" (click)="goNext()" alt="Avatar" class="avatar">
+        </div>&nbsp;
+        <div class="imgcontainer">
+          <img src="../../assets/create-project-active.svg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="log">
+          <img src="../../assets/Logout.svg" class="add-project"  (click)="logout()" alt="add">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="main-section">
+    <div class="logo-container">
+      <img src="../assets/Header-bg.svg" class="bg-img" alt="...">
+
+      <div class="cp">
+        <h5>>Create Project</h5>
+      </div>
+      <img src="../assets/Logo.svg" class="img-fluid" alt="Your Logo">
+    </div>
+
+   
+
+    <div class="table-section">
+      <form [formGroup]=" projectForm" class="row g-3">
+        <div class="row g-3 button-ch">
+          <div class="col-md-8">
+            <div class="form-floating">
+              
+              <input type="text" class="form-control" formControlName="projectname" id="exampleFormControlTextarea1" rows="2">
+              <label for="exampleFormControlTextarea1" class="form-label">Enter Project Theme</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-floating">
+              <input type="submit" class="btn btn-primary btn-lg" (click)="saveProject()" value="Save Project">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="Reason" class="form-label">Reason</label>
+          <select class="form-select" formControlName="reason" aria-label="Default select example">
+            
+            <option *ngFor="let reason of reasonList" [value]="reason">{{reason}}</option>
+            
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="Type" class="form-label">Type</label>
+          <select class="form-select" formControlName="type" aria-label="Default select example">
+            <option *ngFor="let type of typeList" [value]="type">{{type}}</option>
+            
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="Division" class="form-label">Division</label>
+          <select class="form-select" formControlName="division"  aria-label="Default select example">
+           
+            <option *ngFor="let division of divisionList" [value]="division">{{division}}</option>
+
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="Catogary" class="form-label">Catogary</label>
+          <select class="form-select" formControlName="category"  aria-label="Default select example">
+            
+            <option *ngFor="let category of categoryList" [value]="category">{{category}}</option>
+
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="Priority" class="form-label">Priority</label>
+          <select class="form-select" formControlName="priority"  aria-label="Default select example">
+            
+            <option *ngFor="let priority of priorityList" [value]="priority">{{priority}}</option>
+
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="Department" class="form-label">Department</label>
+          <select class="form-select" formControlName="department"  aria-label="Default select example">
+           
+            <option *ngFor="let department of departmentList" [value]="department">{{department}}</option>
+
+          </select>
+        </div>
+        <div class="col-md-4"> 
+          <label for="startdate" class="form-label">Start Date</label> 
+          <input type="date" required [class.is-invalid]="startdate?.invalid && startdate?.touched" formControlName="startdate" class="form-control" id="inputStartDate"> 
+          <div *ngIf="startdate?.invalid && startdate?.touched"> 
+            <small class="text-danger" *ngIf="startdate?.errors?.['required']">StartDate is required</small> 
+          </div> 
+        </div> 
+        <div class="col-md-4"> 
+          <label for="enddate" class="form-label">End Date</label> 
+          <input type="date" required [class.is-invalid]="enddate?.invalid && enddate?.touched" formControlName="enddate" class="form-control" id="inputEndDate"> 
+          <div *ngIf="enddate?.invalid && enddate?.touched"> 
+            <small class="text-danger" *ngIf="enddate?.errors?.['required']">EndDate is required</small> 
+          </div> 
+        </div>
+        <div class="col-md-4">
+          <label for="Location" class="form-label">Location</label>
+          <select class="form-select" formControlName="location"  aria-label="Default select example">
+           
+            <option *ngFor="let location of locationList" [value]="location">{{location}}</option>
+
+          </select>
+        </div>
+        <div class="bottom-text">Status:<b>Registered</b></div>
+      </form>
+      </div>
+      

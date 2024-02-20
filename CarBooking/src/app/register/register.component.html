@@ -1,0 +1,55 @@
+<form class="row g-3 formclass" [formGroup]="registerForm" (ngSubmit)="saveUser()">
+    <div>
+        <h5>Register to zoom car</h5>
+    </div>
+
+    <label for="name">Name</label>
+    <div class="form-floating ">
+        <input type="text" [class.is-invalid]="name?.invalid && name?.touched" formControlName="name"
+            class="form-control" id="name" placeholder="name" required>
+        <div *ngIf="name?.invalid && name?.touched">
+            <small class="text-danger" *ngIf="name?.errors?.['required']">name is required</small>
+        </div>
+    </div>
+
+    <label for="email">Email Id</label>
+    <div class="form-floating ">
+        <input type="email" [class.is-invalid]="email?.invalid && email?.touched" formControlName="email"
+            class="form-control" id="email" placeholder="email id" required>
+        <div *ngIf="email?.invalid && email?.touched">
+            <small class="text-danger" *ngIf="email?.errors?.['required']">Email is required</small>
+        </div>
+    </div>
+
+    <label for="contact">Contact</label>
+    <div class="form-floating ">
+        <input type="tel" [class.is-invalid]="contact?.invalid && contact?.touched" formControlName="contact"
+            class="form-control" id="contact" placeholder="contact" required>
+        <div *ngIf="contact?.invalid && contact?.touched">
+            <small class="text-danger" *ngIf="contact?.errors?.['required']">contact is required</small>
+        </div>
+    </div>
+
+    <label for="password">Password</label>
+    <div class="form-floating ">
+        <input type="password" class="form-control eye-pass" formControlName="password" [class.is-invalid]="password?.invalid && password?.touched" class="form-control" id="password"
+            placeholder="Password" required>
+        <div *ngIf="password?.invalid && password?.touched">
+            <small class="text-danger" *ngIf="password?.errors?.['required']">Password is required</small>
+        </div>
+    </div>
+   
+    <label for="confirmpassword">Confirm Password</label>
+    <div class="form-floating ">
+        <input type="password" class="form-control eye-pass" formControlName="confirmpassword" [class.is-invalid]="confirmpassword?.invalid && confirmpassword?.touched" class="form-control" id="confirmpassword"
+            placeholder="confirmpassword" required>
+        <div *ngIf="confirmpassword?.invalid && confirmpassword?.touched">
+            <small class="text-danger" *ngIf="confirmpassword?.errors?.['required']">confirmPassword is required</small>
+        </div>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="submit" value="Register" class="btn btn-primary" (click)="gotoLogin()" />
+    </div>
+
+</form>

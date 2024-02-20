@@ -1,0 +1,46 @@
+<div class="container"> 
+  <h3> Student MarkSheet</h3> 
+ 
+  <table class="table table-bordered"> 
+    <tbody> 
+      <tr> 
+        <th>University:</th> 
+        <td>SRTM University NANDED</td> 
+      </tr> 
+      <tr> 
+        <th>Student Id:</th> 
+        <td>{{ stud?.id }}</td> 
+      </tr> 
+      <tr> 
+        <th>Student Name:</th> 
+        <td>{{ stud?.name }}</td> 
+      </tr> 
+      <tr> 
+        <th>JavaScript :</th> 
+        <td>{{ stud?.subject1 }}</td> 
+      </tr> 
+      <tr> 
+        <th>TypeScript :</th> 
+        <td>{{ stud?.subject2 }}</td> 
+      </tr> 
+      <tr> 
+        <th>Angular :</th> 
+        <td>{{ stud?.subject3 }}</td> 
+      </tr>
+
+      <!-- <tr> 
+        <th>Total :</th> 
+        <td>{{displayTotal() }}</td> 
+      </tr>-->
+
+      <tr> 
+        <th>Percentage :</th> 
+        <td>{{ displayPercentage(stud.subject1,stud.subject2,stud.subject1) }}</td> 
+      </tr> 
+
+    </tbody> 
+  </table> 
+ 
+  <button type="button" class="btn btn-outline-primary" (click)="goBack()">Back</button>
+  <button type="button" class="btn btn-outline-primary" (click)="printDetails()">Print Result</button> 
+</div>

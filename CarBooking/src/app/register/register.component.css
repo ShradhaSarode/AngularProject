@@ -1,0 +1,57 @@
+/* Style for the form container */
+.row.g-3 {
+    max-width: 400px; /* Adjust according to your design */
+    margin: auto; /* Center the form */
+}
+
+/* Style for the heading */
+h5 {
+    margin-top: 0;
+}
+
+/* Style for the form inputs */
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* Style for the eye password icon */
+.eye-pass {
+    padding-right: 2.5rem; /* Adjust according to your design */
+}
+
+/* Style for the error message */
+.error-message {
+    color: red;
+    margin-top: 0.5rem;
+}
+
+/* Style for the submit button */
+.btn-primary {
+    width: 100%; /* Make button full width */
+}
+
+/* Style for the invalid input */
+.is-invalid input.form-control {
+    border-color: red;
+}
+
+/* Style for the small error message */
+.text-danger {
+    font-size: 0.875rem; /* Adjust according to your design */
+}
+.formclass
+{
+   position: absolute; 
+    /* height: auto;  */
+    left: 35%; 
+    width: 50%; 
+    /* top: 10%;  */
+    background-color: #eeaceb; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(228, 165, 165, 0.2); 
+    /* bottom: 30; */
+    /* margin-top: 10%; */
+
+}

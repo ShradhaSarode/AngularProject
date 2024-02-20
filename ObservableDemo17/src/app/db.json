@@ -1,0 +1,19 @@
+{
+  "product": [
+    {
+      "id": "101",
+      "name": "CPU",
+      "price": 2000
+    },
+    {
+      "id": "103",
+      "name": "RAM",
+      "price": "6000"
+    },
+    {
+      "id": "104",
+      "name": "Mobile",
+      "price": "50000"
+    }
+  ]
+}

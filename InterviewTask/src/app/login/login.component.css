@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0808;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+form {
+    position: absolute;
+    height: 450px;
+    left: 40%;
+    width: 450px;
+    top: 35%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;     
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #2744e9;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+  
+  .tag
+  {
+    color: #ebf1f3;
+    position: absolute;
+    top: 40%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+  }
+  .logo-container {
+    position: relative;
+    height: 65vh;
+    /* margin-left: 45px; */
+    /* margin-right: 30%;
+    margin-left: 10px; */
+  }
+
+  .img-fluid
+  {
+     position: absolute;
+     top: 25%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+  }
+  /* .eye-pass
+{
+   position: absolute;
+   cursor: pointer;
+   transform: translateY(-50%);
+   left: 20%;
+} */
+
+.eye-pass {
+  border-radius: 0 !important; /* Remove rounded corners */
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+}
+
+.input-group-text {
+  cursor: pointer;
+}
+
+.error-message{ 
+ 
+  margin-top: 20px; 
+  color: red; 
+  font-size: medium; 
+}

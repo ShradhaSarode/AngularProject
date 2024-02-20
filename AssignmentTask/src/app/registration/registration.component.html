@@ -1,0 +1,72 @@
+<div *ngIf="internetAvailable; else noInternet">
+<div class="container">
+    <h2>Registration</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="addUser()">
+        <!--(ngSubmit)="saveDetails()" #registrationForm="ngForm" -->
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" formControlName="firstName" [class.is-invalid]="firstName?.invalid && firstName?.touched" id="firstName" name="firstName" ngModel required>
+        <div *ngIf="firstName?.invalid && firstName?.touched"> 
+          <small class="text-Info error" *ngIf="firstName?.errors?.['required']">Email id is required</small> 
+      </div> 
+      </div>
+  
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" formControlName="lastName" [class.is-invalid]="lastName?.invalid && lastName?.touched" id="lastName" name="lastName" ngModel required>
+        <div *ngIf="lastName?.invalid && lastName?.touched"> 
+          <small class="text-Info error" *ngIf="lastName?.errors?.['required']">Last Name is required</small> 
+      </div> 
+      </div>
+  
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" [class.is-invalid]="email?.invalid && email?.touched" 
+        class="form-control" id="email" name="email" ngModel required email>
+        <div *ngIf="email?.invalid && email?.touched"> 
+          <small class="text-Info error" *ngIf="email?.errors?.['required']">Email id is required</small> 
+          <small class="text-danger error" *ngIf="email?.errors?.['email']">Email must be in proper format</small> 
+      </div> 
+      </div>
+  
+      <div>
+        <label for="mobile">Mobile:</label>
+        <input type="tel" formControlName="mobile" [class.is-invalid]="mobile?.invalid && mobile?.touched"  id="mobile" name="mobile" ngModel required pattern="[0-9]*">
+        <div *ngIf="mobile?.invalid && mobile?.touched"> 
+          <small class="text-Info error" *ngIf="mobile?.errors?.['required']">Mobile number is required</small> 
+
+      </div> 
+      </div>
+  
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" 
+        [class.is-invalid]="password?.invalid && password?.touched" id="password" name="password" ngModel
+               required minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+               <div *ngIf="password?.invalid && password?.touched"> 
+                <small class="text-Info error" *ngIf="password?.errors?.['required']">Password is required</small> 
+                <small class="text-danger error" *ngIf="password?.errors?.['minlength']">Password must be 8 digits</small> 
+            </div> 
+      </div>
+  
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" formControlName="confirmPassword" 
+        [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched" class="form-control"  id="confirmPassword" name="confirmPassword" ngModel required>
+        <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched"> 
+          <small class="text-Info error" *ngIf="confirmPassword?.errors?.['required']">Password is required</small> 
+
+      </div> 
+      </div>
+  
+      <button type="submit">Save</button>
+      <!-- [disabled]="!registrationForm.form.valid" -->
+    </form>
+  </div>
+</div> 
+<ng-template #noInternet> 
+ 
+  <div class="alert"> 
+    <img src="../../assets/no_int.png" alt="No Internet Connection"> 
+  </div> 
+</ng-template>

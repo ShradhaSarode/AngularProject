@@ -1,0 +1,67 @@
+<div class="container">
+    <h3>Department List</h3>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>NoOfEmp</th>
+                        
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(e of deptList;track e.id){
+                        <tr>
+                            <td>{{e.id}}</td>
+                            <td>{{e.name}}</td>
+                            <td>{{e.noofemp}}</td>
+                           
+                            <td>
+                                <button type="button" class="btn btn-info" (click)="editDept(e)">Edit</button>&nbsp;
+                                <button type="button" class="btn btn-danger" (click)="deleteDept(e.id)">Delete</button>&nbsp;
+                                <button type="button" class="btn btn-info" (click)="infoDept(e.id)">Info</button>&nbsp;
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h3>Department</h3>
+            <form [formGroup]="deptForm" (ngSubmit)="saveDept()">
+                <div class="form-floating mb-3">
+                  <!-- [class.is-invlaid]="id?.invalid && id?.touched" -->
+                    <input type="text" class="form-control" formControlName="id"  name="id" id="id" placeholder="Emp Id">
+                    <label for="id">Id</label>
+                    <!-- <div *ngIf="id?.invalid && id?.touched">
+                      <small class="text-danger" *ngIf="id?.errors?.['required']">Id is required</small>
+                    </div> -->
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="name" required [class.is-invlaid]="name?.invalid && name?.touched" name="name" id="name" placeholder="Emp Name">
+                    <label for="name">Name</label>
+                    <div *ngIf="name?.invalid && name?.touched">
+                      <small class="text-danger" *ngIf="name?.errors?.['required']">Name is required</small>
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="noofemp" required [class.is-invlaid]="noofemp?.invalid && noofemp?.touched" name="noofemp" id="noofemp" placeholder="noofemp">
+                    <label for="noofemp">No of Emp</label>
+                    <div *ngIf="noofemp?.invalid && noofemp?.touched">
+                      <small class="text-danger" *ngIf="noofemp?.errors?.['required']">noofemp is required</small>
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <button type="submit" *ngIf="!isUpdatebtn" class="btn btn-outline-primary">Add</button> &nbsp;
+                    <button type="submit" *ngIf="isUpdatebtn" class="btn btn-outline-primary">Update</button> &nbsp;
+                    <button type="button" class="btn btn-outline-primary">Cancel</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+

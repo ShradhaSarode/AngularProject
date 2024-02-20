@@ -1,0 +1,90 @@
+<div class="container">
+    <h3>Student List</h3>
+    <div class="row">
+      <div class="col-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Sub1(JavaScript)</th>
+              <th>Sub2(TypeScript)</th>
+              <th>Sub3(Angular)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(s of studList;track s.id){
+            <tr>
+              <td>{{s.id}}</td>
+              <td>{{s.name}}</td>
+              <td>{{s.subject1}}</td>
+              <td>{{s.subject2}}</td>
+              <td>{{s.subject3}}</td>
+              <td>
+                <button type="button" class="btn btn-info" (click)="edit(s)">Edit</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" (click)="deleteStudent(s.id)">Delete</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-success" (click)="displayResult(s.id)">Result</button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12">
+        <h3>Student</h3>
+        <form [formGroup]="studForm" (ngSubmit)="saveStudent()">
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" formControlName="id" required
+              [class.is-invlaid]="id?.invalid && id?.touched" name="id" id="id" placeholder="Emp Id">
+            <label for="id">Student Id</label>
+            <div *ngIf="id?.invalid && id?.touched">
+              <small class="text-danger" *ngIf="id?.errors?.['required']">Id is required</small>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="name" required
+              [class.is-invlaid]="name?.invalid && name?.touched" name="name" id="name" placeholder="Student Name">
+            <label for="id">Student Name</label>
+            <div *ngIf="name?.invalid && name?.touched">
+              <small class="text-danger" *ngIf="name?.errors?.['required']">Name is required</small>
+            </div>
+          </div>
+          
+          <div class="form-floating mb-3"> 
+            <input type="number" class="form-control" formControlName="subject1" required 
+              [class.is-invlaid]="subject1?.invalid && subject1?.touched" name="subject1" id="subject1" placeholder="Student marks1"> 
+            <label for="subject1">JavaScript</label> 
+            <div *ngIf="subject1?.invalid && subject1?.touched"> 
+              <small class="text-danger" *ngIf="subject1?.errors?.['required']">Marks1 is required</small> 
+            </div> 
+          </div> 
+ 
+          <div class="form-floating mb-3"> 
+            <input type="number" class="form-control" formControlName="subject2" required 
+              [class.is-invlaid]="subject2?.invalid && subject2?.touched" name="subject2" id="subject2" placeholder="Student marks2"> 
+            <label for="subject2">TypeScript</label> 
+            <div *ngIf="subject2?.invalid && subject2?.touched"> 
+              <small class="text-danger" *ngIf="subject2?.errors?.['required']">Marks2 is required</small> 
+            </div> 
+          </div> 
+ 
+          <div class="form-floating mb-3"> 
+            <input type="number" class="form-control" formControlName="subject3" required 
+              [class.is-invlaid]="subject3?.invalid && subject3?.touched" name="marks3" id="marks3" placeholder="Student marks"> 
+            <label for="subject3">Angular</label> 
+            <div *ngIf="subject3?.invalid && subject3?.touched"> 
+              <small class="text-danger" *ngIf="subject3?.errors?.['required']">Marks3 is required</small> 
+            </div> 
+          </div>
+
+          <div class="form-floating mb-3">
+            <button type="submit" *ngIf="!isUpdatebtn" class="btn btn-outline-primary">Add</button> &nbsp;
+            <button type="submit" *ngIf="isUpdatebtn" class="btn btn-outline-primary">Update</button> &nbsp;
+            <button type="button" class="btn btn-outline-primary">Cancel</button>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div>

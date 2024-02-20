@@ -15,6 +15,12 @@ export class AppComponent implements OnInit {
   constructor(private fb: FormBuilder) {
 
   }
+  userForm = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
+    phoneNo: [''],
+    notification: [true]
+  });
   ngOnInit(): void {
     this.userForm.get('notification')?.valueChanges.subscribe(changeValue => {
       const phoneNo = this.userForm.get('phoneNo');
@@ -24,8 +30,6 @@ export class AppComponent implements OnInit {
       else {
         this.phoneNo?.clearValidators();
       }
-
-
       // update the change in the userform
       phoneNo?.updateValueAndValidity();
     });
@@ -39,12 +43,7 @@ export class AppComponent implements OnInit {
   addData() {
     console.log(this.myForm.value);
   }
-  userForm = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    phoneNo: [''],
-    notification: [true]
-  });
+  
   get name() {
     return this.userForm.get('name');
   }

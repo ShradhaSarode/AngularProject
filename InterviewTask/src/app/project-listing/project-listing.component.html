@@ -1,0 +1,172 @@
+<div class="main-container">
+  <div class="row iconlogo">
+    <div class="row g-1">
+      <div class="col-1">
+        <div class="img-container">
+          <img src="../../assets/Dashboard.svg" (click)="dashboard()" class="dash1" alt="dash1">
+        </div>&nbsp;
+        <div class="img-container">
+          <img src="../../assets/Project-list-active.svg" class="pro-list" alt="list">
+        </div>&nbsp;
+        <div class="img-container">
+          <img src="../../assets/create-project.svg" (click)="goBack()" class="add-project" alt="add">
+        </div>
+
+        <div class="log">
+          <img src="../../assets/Logout.svg" (click)="logout()" class="add-project" alt="add">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-container">
+    <div class="logo-container">
+      <img src="../../assets/Header-bg.svg" class="img1" alt="bglogo">
+
+      <div class="cp">
+        <h5>
+          < Project Listing</h5>
+      </div>
+
+      <img src="../../assets/Logo.svg" class="img-fluid" alt="Your Logo">
+    </div>
+
+    <form class="lap">
+      <div class="search-sort-container">
+        <div class="search-container">
+          <div class="Search">
+            <input [(ngModel)]="searchText" (input)="performSearch()" class="d-flex" type="search" placeholder="Search" aria-label="Search" name="searchText">
+          </div>
+        </div>
+        <div class="sort-container">Sort By:<select class="form" aria-label="Default select example"
+            (change)="getSelectedvalue($event)">
+            <option selected>Priority</option>
+            <option value="1">Project name</option>
+            <option value="2">Reason</option>
+            <option value="3">Type</option>
+            <option value="4">Division</option>
+            <option value="5">Category</option>
+            <option value="6">Priority</option>
+            <option value="7">Dept</option>
+            <option value="8">Location</option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="filteredProjects.length > 0">
+      <table class="table">
+
+        <thead>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Reason</th>
+            <th scope="col">Type</th>
+            <th scope="col">Division</th>
+            <th scope="col">Category</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Department</th>
+            <th scope="col">Location</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+            <!-- <th scope="col"></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          @for(p of filteredProjects; track p.id){
+          <tr>
+            <td>{{p.projectname}}
+              <br>
+              <small>{{p.startdate}} to {{p.enddate}}</small>
+            </td>
+            <td>{{p.reason}}</td>
+            <td>{{p.type}}</td>
+            <td>{{p.division}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.priority}}</td>
+            <td>{{p.department}}</td>
+            <td>{{p.location}}</td>
+            <td>{{p.status}}</td>
+            <td>
+              <button type="button" class="btn btn-info" (click)="updateStatus(p,1)">Start</button>&nbsp;
+              <button type="button" class="btn btn-info" (click)="updateStatus(p,2)">Close</button>&nbsp;
+              <button type="button" class="btn btn-info" (click)="updateStatus(p,3)">Cancel</button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    </form>
+    <div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</div>
+
+<!-- 
+  <form class="format">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Project Name</th>
+          <th scope="col">Reason</th>
+          <th scope="col">Type</th>
+          <th scope="col">Division</th>
+          <th scope="col">Category</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Dept.</th>
+          <th scope="col">Location</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td><button type="button" class="btn btn-outline-primary">Start</button>
+            <button type="button" class="btn btn-outline-primary">Close</button>
+            <button type="button" class="btn btn-outline-primary">Cancel</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>fat</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td><button type="button" class="btn btn-outline-primary">Start</button>
+            <button type="button" class="btn btn-outline-primary">Close</button>
+            <button type="button" class="btn btn-outline-primary">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form> -->

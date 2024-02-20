@@ -1,0 +1,28 @@
+<!-- <div class="bgImg">
+   *ngIf="isOnline; else noInternet" 
+    <h2>Welcome to the Home Page</h2>
+     Add your sample content here 
+    <img src="../../assets/wc.jpg" alt="Avtar" class="avatar">
+    <button (click)="goToRegistration()">Back to Login</button>
+  </div> -->
+  
+  <!-- <ng-template #noInternet>
+    <div>
+      <h2>No Internet Connection</h2>
+      <img src="path/to/no-internet-image.jpg" alt="No Internet Image">
+    </div>
+  </ng-template> -->
+  
+
+  @if(internetAvailable){
+    <div class="container">
+      <img src="../../assets/wc.jpg" alt="Welcome Image">
+    </div>
+  }
+  
+  @else{
+    <div class="container">
+    <img src="../../assets/no_int.png" alt="No Internet Connection">
+  </div>
+  }
+<button (click)="goToLogin()">Back to Login</button>
