@@ -1,0 +1,56 @@
+<div class="container">
+    <h3>CarType List</h3>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(e of ctList;track e.id){
+                        <tr>
+                            <td>{{e.typeid}}</td>
+                            <td>{{e.cartype}}</td>
+                            
+                           
+                            <td>
+                                <button type="button" class="btn btn-info">Edit</button>&nbsp;
+                                <button type="button" class="btn btn-danger">Delete</button>&nbsp;
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h3>CarType</h3>
+            <form [formGroup]="ctForm">
+                <div class="form-floating mb-3">
+                  <!-- [class.is-invlaid]="id?.invalid && id?.touched" -->
+                    <input type="text" class="form-control" formControlName="id"  name="id" id="id" placeholder="Emp Id">
+                    <label for="typeid">Id</label>
+                    <!-- <div *ngIf="id?.invalid && id?.touched">
+                      <small class="text-danger" *ngIf="id?.errors?.['required']">Id is required</small>
+                    </div> -->
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="cartype" required [class.is-invlaid]="cartype?.invalid && cartype?.touched" name="cartype" id="cartype" placeholder="cartype">
+                    <label for="cartype">CarType</label>
+                    <div *ngIf="cartype?.invalid && cartype?.touched">
+                      <small class="text-danger" *ngIf="cartype?.errors?.['required']">Name is required</small>
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <button type="submit" *ngIf="!isUpdatebtn" class="btn btn-outline-primary">Add</button> &nbsp;
+                    <button type="button" class="btn btn-outline-primary">Cancel</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

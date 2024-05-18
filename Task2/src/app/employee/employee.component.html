@@ -1,0 +1,35 @@
+<div>
+    <h2>Employee List</h2>
+
+    <div class="dropdown">
+      <select name="Status" id="Status">Status
+        <option value="volvo">Select All</option>
+        <option value="saab">Cancle All</option>
+        <option value="mercedes">Close All</option>
+        
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>&nbsp;&nbsp;
+          <th>Project</th>&nbsp;&nbsp;
+          <th>Technology</th>&nbsp;&nbsp;
+          <th>Status</th>&nbsp;&nbsp;
+          <th>Action</th>&nbsp;&nbsp;
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>&nbsp;&nbsp;
+          <td>{{ employee.project }}</td>&nbsp;&nbsp;
+          <td>{{ employee.technology }}</td>&nbsp;&nbsp;
+          <td>{{ employee.status }}</td>&nbsp;&nbsp;
+          <td><input class="form-check-input" type="radio"  name="{{ employee.name }}" value="Active" (change)="changeStatus(employee, 'Close')" [checked]="employee.status === 'Close'">Close &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="form-check-input" type="radio" name="{{ employee.name }}" value="Inactive" (change)="changeStatus(employee, 'Cancle')" [checked]="employee.status === 'Cancle'">Cancle &nbsp;&nbsp;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

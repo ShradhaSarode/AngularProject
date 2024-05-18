@@ -1,0 +1,22 @@
+<h3>Employee List</h3>
+<form [ngModel]="">
+<table>
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>salary</th>
+    </thead>
+    <tbody>
+        @for(e for emplist,@track e.id)
+        {
+        <tr>
+            <td>
+                {{e.id}}
+            </td>
+            <td>{{e.name}}</td>
+            <td>{{e.salary}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+</form>

@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit{
   
   ngOnInit(): void {
     this.loginForm = this.fb.group({
+      userid:[],
       email: ['', [Validators.required, Validators.email]],
       password: ['',[Validators.required,Validators.maxLength(8)]]
     });
@@ -47,25 +48,63 @@ export class LoginComponent implements OnInit{
   get password() {
     return this.loginForm.get('password');
   }
-  gotosearch() {
-    this.router.navigate(['/index']);
-//     const credential=this.loginForm.value;
-//     this.loginService.login(credential).subscribe(matchingUser=>{
-     
-//       if(matchingUser)
-//       {
-//         this.router.navigate(['/index']);
-//       }
-//       else 
-//       {
-//         // alert('Invalid credentials. Please try again.');
-//         this.isInvalidCredentials = true;
-//       }
-//     },error=>{
-//       console.error(error);
-//       alert('An error occurred.Please try again.');
-//     }
-// );
+  login() {
+    // this.router.navigate(['/index']);
+    const credential=this.loginForm.value;
+    this.loginService.login(credential).subscribe(matchingUser=>{
+      sessionStorage.setItem("userid",matchingUser.userid);
+    
+      if(matchingUser.roleid==roles.admin)
+      {
+        this.router.navigate(['/cars']);
+      }
+      else if(matchingUser.roleid==roles.user)
+      {
+        // alert('Invalid credentials. Please try again.');
+        this.router.navigate(['/index']);
+      }
+      else{
+        this.isInvalidCredentials = true;
+      }
+    },error=>{
+      console.error(error);
+      alert('An error occurred.Please try again.');
+    }
+);
   }
 
+  getUserid()
+  {
+    const data=this.loginForm.value;
+    
+    this.loginService.getUserid(data).subscribe(matchResult=>{
+      console.log(data);
+      sessionStorage.setItem("userid",data.userid);
+      
+      this.router.navigate(['/booking']);   
+    },
+    error =>{
+      console.error(error);
+      alert('Error Occurred');
+    }
+  );
+  sessionStorage['reset'];
+  }
+
+  goToLogin()
+  {
+    this.router.navigate(['/login']);
+  }
+  goToRegister()
+  {
+    this.router.navigate(['/register']);
+  }
+  goToLogout()
+  {
+    this.router.navigate(['/index']);
+  }
+}
+export enum roles {
+
+  admin=1,user=2
 }

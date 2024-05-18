@@ -1,0 +1,32 @@
+
+<form class="row g-3" [formGroup]="loginForm">
+    <div><h5>Login to get started</h5></div>
+    <label for="email">Email Id</label>
+    <div class="form-floating ">
+      <input type="email" [class.is-invalid]="email?.invalid && email?.touched" formControlName="email" class="form-control" id="email"  placeholder="email id" required>
+      <div *ngIf="email?.invalid && email?.touched"> 
+        <small class="text-danger" *ngIf="email?.errors?.['required']">Email is required</small> 
+      </div> 
+    </div>
+    <label for="password">Password</label>
+<div class="form-floating input-group">
+  <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control eye-pass" formControlName="password" [class.is-invalid]="password?.invalid && password?.touched" id="password" placeholder="Password" required>
+  <span class="input-group-text" id="showPassword" (click)="togglePasswordVisibility()">
+    <img src="../../assets/hide-password.svg" alt="Show Password">
+  </span>
+</div>
+<div *ngIf="password?.invalid && password?.touched">
+  <small class="text-danger" *ngIf="password?.errors?.['required']">Password is required</small>
+</div>
+    <div class="forgot-password"> 
+      <a href="#">Forgot password?</a> 
+  </div>&nbsp;
+
+    <div class="form-floating mb-3">
+      <input type="submit" value="Login" class="btn btn-primary"/>
+    </div>
+
+    <h4 *ngIf="isInvalidCredentials" class="error-message">Invalid credentials.</h4>
+
+  </form>
+

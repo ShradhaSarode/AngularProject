@@ -24,11 +24,13 @@ constructor(private fb: FormBuilder, private router: Router, private route: Acti
 
 ngOnInit(): void {
   this.registerForm = this.fb.group({
+    userid:[],
     name:['',[Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     contact: [,[Validators.required,Validators.maxLength(10)]],
     password: ['',[Validators.required,Validators.maxLength(8)]],
     confirmpassword: ['',[Validators.required,Validators.maxLength(8)]]
+    // roleid:["2"]
   });
   this.isUpdatebtn = false;
   // read the query parameter value using paramMap obervable
@@ -54,6 +56,9 @@ get password() {
 get confirmpassword() {
   return this.registerForm.get('confirmpassword');
 }
+// get roleid() {
+//   return this.registerForm.get('roleid');
+// }
 getUser() {
   this.regService.getUser().subscribe(result => {
     this.userList = result;
@@ -65,14 +70,28 @@ getUser() {
 // save & update product
 saveUser() {
   let user = this.registerForm.value;
-  this.regService.saveUser(user).subscribe(result => {
-  });
-  
-  this.getUser();
+  this.regService.saveUser(user).subscribe(result => {});
+  // this.getUser();
   this.registerForm.reset();
+  this.router.navigate(['/login']);
   
 }
-gotoLogin() {
+
+goToLogin()
+{
   this.router.navigate(['/login']);
 }
+goToRegister()
+{
+  this.router.navigate(['/register']);
 }
+goToLogout()
+{
+  this.router.navigate(['/login']);
+}
+
+
+
+}
+
+

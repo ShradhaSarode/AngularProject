@@ -1,3 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-secondary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img id="logoSize" src="../../assets/images/logo3.jpg" alt="" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               
+  
+            </ul>
+            <form class="d-flex"> 
+                <button class="btn btn-outline-primary round-button mx-2" type="button" (click)="goToLogin()">Login</button>
+                <button class="btn btn-success round-button" type="button" (click)="goToRegister()">Register</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-primary round-button mx-2" type="button" (click)="goToLogout()">Logout</button>
+            </form>
+        </div>
+    </div>
+  </nav>
+
 <form class="row g-3 formclass" [formGroup]="registerForm" (ngSubmit)="saveUser()">
     <div>
         <h5>Register to zoom car</h5>
@@ -49,7 +73,7 @@
     </div>
 
     <div class="form-floating mb-3">
-        <input type="submit" value="Register" class="btn btn-primary" (click)="gotoLogin()" />
+        <input type="submit" value="Register" class="btn btn-primary" />
     </div>
 
 </form>

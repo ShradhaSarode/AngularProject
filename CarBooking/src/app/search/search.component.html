@@ -1,363 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="navbar navbar-expand-lg navbar-secondary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img id="logoSize" src="../../assets/images/logo3.jpg" alt="" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-secondary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img id="logoSize" src="" alt="" class="d-inline-block align-text-top">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                   
-
-                </ul>
-                <form class="d-flex"> 
-                    <button class="btn btn-outline-primary round-button mx-2" type="button" >Login</button>
-                    <button class="btn btn-success round-button" type="button">Register</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid"  style="padding-top: 75px;">
-        <div class="car-list-home-container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-header bg-success">
-                            CarList
-                        </div>
-                        <div class="container">
-                            
-                            <div class="row">
-                                <div class="col-6">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @for(p of carList;track p.id){
-                                                <tr>
-                                                    <td>{{p.id}}</td>
-                                                    <td>{{p.name}}</td>
-                                                    <td>{{p.price}}</td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-info" (click)="updateCarDetails(p)">Edit</button>&nbsp;
-                                                        <button type="button" class="btn btn-danger" (click)="deleteCarDetails(p.id)">Delete</button>&nbsp;
-                                
-                                                    </td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-8">
-                    <div class="row">
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="car-list-home">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <section class="car-list-card">
-                                            <div class="car-list-card-image" style="height: 160px;"><img
-                                                    src="https://zoomcar-assets.zoomcar.com/425168/HostCarImage/host_car_image_42516882cb3091-a71f-4ebe-8966-fb4c01501fde.jpg20231017-55-1finoxu">
-                                            </div>
-                                            <div class="car-list-card-description">
-                                                <div class="car-list-card-description-reviews">
-                                                    <div class="car-list-card-description-reviews-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                    <div class="car-list-card-description-reviews-value">
-                                                        4.98
-                                                    </div>
-                                                    <div class="car-list-card-description-reviews-count">
-                    
-                                                    </div>
-                                                </div>
-                                                <div class="car-list-card-description-title">
-                                                    Maruti Suzuki Ertiga 2022
-                                                </div>
-                                                <div class="car-list-card-description-properties">
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Manual
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Petrol
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        7 Seats
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="car-list-card-price-distance">
-                                                <div class="car-list-card-price">
-                                                    <!-- <div class="car-list-card-price-availability-text">
-                                                        Available from 20 November
-                                                    </div> -->
-                                                    <div class="car-list-card-price-title">
-                                                        ₹180/hr
-                                                    </div>
-                                                    <div class="car-list-card-price-sub-title">
-                    
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="car-list-card-distance"><img src="/img/icons_location.svg" alt="location">
-                                                    <div class="car-list-card-distance-place">
-                                                        Pune
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-4">
-                                        <section class="car-list-card">
-                                            <div class="car-list-card-image" style="height: 160px;"><img
-                                                    src="https://zoomcar-assets.zoomcar.com/112574/HostCarImage/host_car_image_1125745a6986fa-b402-4f4a-8121-c74f62a33c8e.jpg20230207-4959-1e1v7t9">
-                                            </div>
-                                            <div class="car-list-card-description"><!---->
-                                                <div class="car-list-card-description-reviews">
-                                                    <div class="car-list-card-description-reviews-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                    <div class="car-list-card-description-reviews-value">
-                                                        4.98
-                                                    </div>
-                                                    <div class="car-list-card-description-reviews-count">
-                    
-                                                    </div>
-                                                </div>
-                                                <div class="car-list-card-description-title">
-                                                    Maruti Suzuki Ertiga 2022
-                                                </div>
-                                                <div class="car-list-card-description-properties">
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Manual
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Petrol
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        7 Seats
-                                                       
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="car-list-card-price-distance">
-                                                <div class="car-list-card-price">
-                                                    <!-- <div class="car-list-card-price-availability-text">
-                                                        Available from 20 November
-                                                    </div> -->
-                                                    <div class="car-list-card-price-title">
-                                                        ₹180/hr
-                                                    </div>
-                                                    <div class="car-list-card-price-sub-title">
-                    
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="car-list-card-distance"><img src="/img/icons_location.svg" alt="location">
-                                                    <div class="car-list-card-distance-place">
-                                                        Nagpur
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-4">
-                                        <section class="car-list-card">
-                                            <div class="car-list-card-image" style="height: 160px;"><img
-                                                    src="https://zoomcar-assets.zoomcar.com/37471/HostCarImage/37471_host_car_image_374714405909e-83f5-4b42-a9b5-1c1e709ed612c1395525-74a8-4757-867d-b7f10c3e3bef.jpg">
-                                            </div>
-                                            <div class="car-list-card-description">
-                                                <div class="car-list-card-description-reviews">
-                                                    <div class="car-list-card-description-reviews-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                    <div class="car-list-card-description-reviews-value">
-                                                        4.98
-                                                    </div>
-                                                    <div class="car-list-card-description-reviews-count">
-                    
-                                                    </div>
-                                                </div>
-                                                <div class="car-list-card-description-title">
-                                                    Maruti Suzuki Ertiga 2022
-                                                </div>
-                                                <div class="car-list-card-description-properties">
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Manual
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Petrol
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        7 Seats
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="car-list-card-price-distance">
-                                                <div class="car-list-card-price">
-                                                    <!-- <div class="car-list-card-price-availability-text">
-                                                        Available from 20 November
-                                                    </div> -->
-                                                    <div class="car-list-card-price-title">
-                                                        ₹180/hr
-                                                    </div>
-                                                    <div class="car-list-card-price-sub-title">
-                    
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="car-list-card-distance"><img src="/img/icons_location.svg" alt="location">
-                                                    <div class="car-list-card-distance-place">
-                                                        Pune
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-4">
-                                        <section class="car-list-card">
-                                            <div class="car-list-card-image" style="height: 160px;"><img
-                                                    src="https://zoomcar-assets.zoomcar.com/215785/HostCarImage/host_car_image_21578545bf5428-afb2-4a35-8b1e-bb0252398cbb.jpg20230403-42-qj222r">
-                                            </div>
-                                            <div class="car-list-card-description"><!---->
-                                                <div class="car-list-card-description-reviews">
-                                                    <div class="car-list-card-description-reviews-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                    <div class="car-list-card-description-reviews-value">
-                                                        4.98
-                                                    </div>
-                                                    <div class="car-list-card-description-reviews-count">
-                    
-                                                    </div>
-                                                </div>
-                                                <div class="car-list-card-description-title">
-                                                    Maruti Suzuki Ertiga 2022
-                                                </div>
-                                                <div class="car-list-card-description-properties">
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Manual
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Petrol
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        7 Seats
-                                                       
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="car-list-card-price-distance">
-                                                <div class="car-list-card-price">
-                                                    <!-- <div class="car-list-card-price-availability-text">
-                                                        Available from 20 November
-                                                    </div> -->
-                                                    <div class="car-list-card-price-title">
-                                                        ₹180/hr
-                                                    </div>
-                                                    <div class="car-list-card-price-sub-title">
-                    
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="car-list-card-distance"><img src="/img/icons_location.svg" alt="location">
-                                                    <div class="car-list-card-distance-place">
-                                                        Pune
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-4">
-                                        <section class="car-list-card">
-                                            <div class="car-list-card-image" style="height: 160px;"><img
-                                                    src="https://zoomcar-assets.zoomcar.com/68914/HostCarImage/68914_host_car_image_6891416b2e1fa-7aaa-435e-bcca-52b7ffe7ece503ee0355-0656-40aa-9f79-0dae802ed52d.jpg">
-                                            </div>
-                                            <div class="car-list-card-description">
-                                                <div class="car-list-card-description-reviews">
-                                                    <div class="car-list-card-description-reviews-icon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                    <div class="car-list-card-description-reviews-value">
-                                                        4.98
-                                                    </div>
-                                                    <div class="car-list-card-description-reviews-count">
-                    
-                                                    </div>
-                                                </div>
-                                                <div class="car-list-card-description-title">
-                                                    Maruti Suzuki Ertiga 2022
-                                                </div>
-                                                <div class="car-list-card-description-properties">
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Manual
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        Petrol
-                                                        <div class="property-point"></div>
-                                                    </div>
-                                                    <div class="car-list-card-description-properties-property">
-                                                        7 Seats
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="car-list-card-price-distance">
-                                                <div class="car-list-card-price">
-                                                    <!-- <div class="car-list-card-price-availability-text">
-                                                        Available from 20 November
-                                                    </div> -->
-                                                    <div class="car-list-card-price-title">
-                                                        ₹180/hr
-                                                    </div>
-                                                    <div class="car-list-card-price-sub-title">
-                    
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="car-list-card-distance"><img src="/img/icons_location.svg" alt="location">
-                                                    <div class="car-list-card-distance-place">
-                                                        Pune
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         
-    
-    
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-outline-primary round-button mx-2" type="button"
+                    (click)="goToLogin()">Login</button>
+                <button class="btn btn-success round-button" type="button" (click)="goToRegister()">Register</button>
+                <button class="btn btn-outline-primary round-button mx-2" type="button"
+                    (click)="goToLogout()">Logout</button>
+            </form>
         </div>
     </div>
+</nav>
+<div class="container-fluid" style="padding-top: 75px;">
+    <div class="car-list-home-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success">
+                        CarList
+                    </div>
+                    <div class="container">
 
-    
-</body>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>ModelName</th>
+                                            <th>noofseats</th>
+                                            <th>Cost/hr</th>
+                                            <th>typeid</th>
+                                            <th>Image</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                            
 
-</html>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for(p of carList;track p.id){
+                                        <tr>
+                                            <td>{{p.carid}}</td>
+                                            <td>{{p.modelname}}</td>
+                                            <td>{{p.noofseats}}</td>
+                                            <td>{{p.cost}}</td>
+                                            <td>{{p.typeid}}</td>
+                                            <!-- [value]="clist.typeid" -->
+                                            <td><img [src]="p.image" height="100" width="100" alt=""></td>
+                                            <td>{{p.status}}</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-info" (click)="carBooking(p.carid)">Book</button>&nbsp;
+                                            </td>
+                                        </tr>
+                                            
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

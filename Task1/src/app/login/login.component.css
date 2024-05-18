@@ -1,0 +1,50 @@
+p {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  h5 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .form-floating {
+    position: relative;
+  }
+  
+  .form-floating input[type="email"],
+  .form-floating input[type="password"] {
+    width: 100%;
+  }
+  
+  .input-group-text {
+    cursor: pointer;
+  }
+  
+  .eye-pass {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .forgot-password a {
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
