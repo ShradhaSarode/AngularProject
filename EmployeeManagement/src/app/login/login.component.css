@@ -1,0 +1,78 @@
+/* Navbar Styles */
+.navbar-secondary {
+  background-color: #adcded; /* Light background color for the navbar */
+  padding: 10px;
+}
+
+.navbar-brand img {
+  height: 40px; /* Adjust the logo size */
+}
+
+.navbar-toggler {
+  border: none; /* Remove the border from the toggler button */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.5%29" stroke-width="2" linecap="round" linejoin="round" d="M4 7h22M4 15h22M4 23h22"%3E%3C/path%3E%3C/svg%3E');
+  /* Custom icon for the toggler */
+}
+
+/* Button Styles */
+.round-button {
+  border-radius: 50px; /* Rounded corners for the buttons */
+  padding: 10px 20px;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Form Styles */
+.formclass {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #284d72;
+  border-radius: 5px;
+  background-color: #f0acac; /* White background for the form */
+}
+
+.form-floating {
+  margin-bottom: 15px;
+}
+
+.form-floating input {
+  height: calc(3.5rem + 2px);
+  padding: 1rem .75rem;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 20px;
+}

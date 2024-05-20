@@ -1,0 +1,62 @@
+/* Styles for navbar */
+.navbar {
+    background-color: #007bff; /* Blue background color */
+}
+
+.navbar-toggler-icon {
+    color: white; /* White color for the toggle icon */
+}
+
+.navbar-collapse {
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.navbar-nav {
+    margin-right: 10px; /* Right margin for the nav items */
+}
+
+.navbar-nav .btn {
+    margin-left: 10px; /* Left margin for the logout button */
+}
+
+/* Styles for container */
+.container {
+    margin-top: 20px; /* Top margin for the container */
+    margin-bottom: 20px; /* Bottom margin for the container */
+}
+
+/* Styles for table */
+.table {
+    width: 100%; /* Full width for the table */
+    margin-top: 20px; /* Top margin for the table */
+}
+
+.table th, .table td {
+    text-align: center; /* Center align text in table cells */
+    vertical-align: middle; /* Align content vertically in table cells */
+}
+
+/* Styles for form */
+form {
+    display: flex; /* Display form items in a flex layout */
+    justify-content: flex-end; /* Align form items to the right */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        justify-content: center; /* Center align items on smaller screens */
+    }
+    
+    .navbar-nav {
+        margin: 0; /* Remove margin for nav items */
+    }
+    
+    .navbar-nav .btn {
+        margin-left: 0; /* Remove left margin for logout button */
+    }
+    
+    form {
+        justify-content: center; /* Center align form items on smaller screens */
+    }
+}

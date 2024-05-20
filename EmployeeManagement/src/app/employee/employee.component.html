@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-secondary">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-primary" type="button" (click)="logout()">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Employee List</h3>
+  <div class="row">
+    <div class="col-11">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(e of employeeList;track e.empid){
+          <tr>
+            <td>{{ e.empid }}</td>
+            <td>{{ e.name }}</td>
+            <td>{{ e.deptid }}
+              @for(d of departmentList;track d.deptid){ 
+                <div *ngIf="d.deptid==e.deptid"> 
+                  <td>{{d.deptname}}</td> 
+                </div> 
+              }
+            </td>
+            <td>{{ e.salary }}</td>
+            <td>
+              <button type="button" class="btn btn-info" (click)="editEmp(e)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteEmp(e.empid)">Delete</button>
+            </td>
+          </tr>
+        }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6">
+      <h3>Employee</h3>
+      <form [formGroup]="empForm" (ngSubmit)="saveEmp()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" formControlName="empid" name="empid" id="empid" placeholder="Emp Id">
+          <label for="empid">Emp Id</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" formControlName="name" required name="name" id="name" placeholder="Emp Name">
+          <label for="name">Emp Name</label>
+          <div *ngIf="name?.invalid && name?.touched">
+            <small class="text-danger" *ngIf="name?.errors?.['required']">Name is required</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <label for="department">Department</label>
+          <select class="form-control" id="department" formControlName="department" name="department">
+            <option *ngFor="let d of departmentList" [value]="d.deptid">{{ d.deptname }}</option>
+          </select>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" formControlName="salary" required name="salary" id="salary" placeholder="Emp Salary">
+          <label for="salary">Emp Salary</label>
+          <div *ngIf="salary?.invalid && salary?.touched">
+            <small class="text-danger" *ngIf="salary?.errors?.['required']">Salary is required</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <button type="submit" *ngIf="!isUpdatebtn" class="btn btn-outline-primary">Add</button>
+          <button type="submit" *ngIf="isUpdatebtn" class="btn btn-outline-primary">Update</button>
+          <button type="button" class="btn btn-outline-primary">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Navbar styles */
+.navbar-secondary {
+    background-color: #adcded;
+}
+
+.navbar-secondary .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-secondary .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox%3D"0 0 30 30" xmlns%3D"http://www.w3.org/2000/svg"%3E%3Cpath stroke%3D"rgba%28255%2C 255%2C 255%2C 0.5%29" stroke-width%3D"2" stroke-linecap%3D"round" stroke-miterlimit%3D"10" d%3D"M4 7h22M4 15h22M4 23h22"%2F%3E%3C%2Fsvg%3E');
+}
+
+.navbar-secondary .navbar-nav .nav-link {
+    color: white;
+    margin-right: 1rem;
+}
+
+.navbar-secondary .navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+.round-button {
+    border-radius: 50px;
+}
+
+/* Form styles */
+form.formclass {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f0acac;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form.formclass h5 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+form.formclass label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+form.formclass .form-floating {
+    margin-bottom: 1rem;
+}
+
+form.formclass .form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+form.formclass .text-danger {
+    font-size: 0.875rem;
+}
+
+form.formclass .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+}
+
+form.formclass .eye-pass {
+    padding-right: 2.5rem; /* Adjust if you add an eye icon for password visibility toggle */
+}
